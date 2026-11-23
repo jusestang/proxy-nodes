@@ -1,0 +1,8 @@
+:{$PORT} {
+	handle / {
+		respond "ok" 200
+	}
+	handle {$WS_PATH} {
+		reverse_proxy 127.0.0.1:10000
+	}
+}

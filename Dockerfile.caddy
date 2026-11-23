@@ -1,0 +1,18 @@
+# Variant for platforms whose health check needs a plain HTTP 200 on /.
+# Caddy answers / with 200 and reverse-proxies /ws to sing-box on :10000.
+# Same env vars as the plain Dockerfile (PORT, UUID, WS_PATH).
+# Sing-box config here uses a fixed port 10000 (see config-caddy.json).
+
+FROM alpine:3.21
+RUN apk add --no-cache ca-certificates curl caddy
+ARG SINGBOX_VERSION=1.11.0
+RUN curl -fsSL -o /tmp/sb.tar.gz \
+      https://github.com/SagerNet/sing-box/releases/download/v${SINGBOX_VERSION}/sing-box-${SINGBOX_VERSION}-linux-amd64.tar.gz \
+ && tar -xzf /tmp/sb.tar.gz -C /tmp \
+ && mv /tmp/sing-box-${SINGBOX_VERSION}-linux-amd64/sing-box /usr/local/bin/sing-box \
+ && rm -rf /tmp/sb.tar.gz /tmp/sing-box-${SINGBOX_VERSION}-linux-amd64
+COPY config-caddy.json /etc/sing-box/config.json
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY entrypoint-caddy.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

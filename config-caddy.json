@@ -1,0 +1,1 @@
+{"inbounds":[{"listen":"127.0.0.1","listen_port":10000,"tag":"vless-ws","transport":{"path":"__WS_PATH__","type":"ws"},"type":"vless","users":[{"uuid":"__UUID__"}]}],"log":{"level":"warn"},"outbounds":[{"tag":"direct","type":"direct"}]}
