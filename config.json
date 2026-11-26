@@ -1,14 +1,1 @@
-{
-  "log": { "level": "warn" },
-  "inbounds": [
-    {
-      "type": "vless",
-      "tag": "vless-ws",
-      "listen": "0.0.0.0",
-      "listen_port": __PORT__,
-      "users": [{ "uuid": "__UUID__" }],
-      "transport": { "type": "ws", "path": "__WS_PATH__" }
-    }
-  ],
-  "outbounds": [{ "type": "direct", "tag": "direct" }]
-}
+ewogICJsb2ciOiB7ICJsZXZlbCI6ICJ3YXJuIiB9LAogICJpbmJvdW5kcyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAidmxlc3MiLAogICAgICAidGFnIjogInZsZXNzLXdzIiwKICAgICAgImxpc3RlbiI6ICIwLjAuMC4wIiwKICAgICAgImxpc3Rlbl9wb3J0IjogX19QT1JUX18sCiAgICAgICJ1c2VycyI6IFt7ICJ1dWlkIjogIl9fVVVJRF9fIiB9XSwKICAgICAgIm11bHRpcGxleCI6IHsgImVuYWJsZWQiOiB0cnVlLCAicGFkZGluZyI6IGZhbHNlIH0sCiAgICAgICJ0cmFuc3BvcnQiOiB7ICJ0eXBlIjogIndzIiwgInBhdGgiOiAiX19XU19QQVRIX18iLCAibWF4X2Vhcmx5X2RhdGEiOiAyMDQ4LCAiZWFybHlfZGF0YV9oZWFkZXJfbmFtZSI6ICJTZWMtV2ViU29ja2V0LVByb3RvY29sIiB9CiAgICB9CiAgXSwKICAib3V0Ym91bmRzIjogW3sgInR5cGUiOiAiZGlyZWN0IiwgInRhZyI6ICJkaXJlY3QiIH1dCn0K
