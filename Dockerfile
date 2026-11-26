@@ -6,7 +6,7 @@
 
 FROM alpine:3.21
 RUN apk add --no-cache ca-certificates curl
-ARG SINGBOX_VERSION=1.11.0
+ARG SINGBOX_VERSION=1.14.4
 RUN curl -fsSL -o /tmp/sb.tar.gz \
       https://github.com/SagerNet/sing-box/releases/download/v${SINGBOX_VERSION}/sing-box-${SINGBOX_VERSION}-linux-amd64.tar.gz \
  && tar -xzf /tmp/sb.tar.gz -C /tmp \
